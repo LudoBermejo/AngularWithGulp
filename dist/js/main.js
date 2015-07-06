@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("BoilerApp",["ngRoute","ngAnimate"]).config(["$locationProvider","$routeProvider",function(e,o){e.hashPrefix("!"),o.when("/",{templateUrl:"./templates/partial1.html",controller:"MainController"}).otherwise({redirectTo:"/"})}]),angular.module("BoilerApp").controller("MainController",["$scope",function(e){e.test="Testing..."}])}();
