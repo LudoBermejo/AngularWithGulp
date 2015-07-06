@@ -1,8 +1,14 @@
 // gulp
 var gulp = require('gulp');
 
-// plugins
-var plugins = require('gulp-load-plugins')();
+// plugins. We need to add "del" package, becasue gulp-load-plugins can't load this package
+// (it only loads those who starts with gulp-)
+var plugins = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'del'],
+  replaceString: /\bgulp[\-.]/
+});
+
+
 
 gulp.task('lint', require('./gulp-tasks/lint')(gulp, plugins));
 gulp.task('clean', require('./gulp-tasks/clean')(gulp, plugins));
