@@ -1,0 +1,1 @@
+angular.module('sampleModule', ['boilerApp.sample.controllers']);

@@ -3,7 +3,7 @@
 'use strict';
 
 
-  angular.module('boilerApp', ['ngRoute', 'testModule'])
+  angular.module('boilerApp', ['ngRoute', 'sampleModule'])
 
   .config([
     '$locationProvider',
@@ -13,8 +13,8 @@
       // routes
       $routeProvider
         .when("/", {
-          templateUrl: "./modules/test/views/template.html",
-          controller: "TestController"
+          templateUrl: "./modules/sample/views/template.html",
+          controller: "SampleController"
         })
         .otherwise({
            redirectTo: '/'
