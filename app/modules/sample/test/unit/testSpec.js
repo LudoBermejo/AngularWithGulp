@@ -11,6 +11,7 @@ describe('Hello World example', function() {
 			$scope: scope
 		});
 	}));
+	
 	it('Test must get a done', function () {
 		expect(scope.test).toEqual("Done!");
 	});

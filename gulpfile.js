@@ -4,7 +4,7 @@ var gulp = require('gulp');
 // plugins. We need to add "del" package, becasue gulp-load-plugins can't load this package
 // (it only loads those who starts with gulp-)
 var plugins = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'del'],
+  pattern: ['gulp-*', 'del', 'karma'],
   replaceString: /\bgulp[\-.]/
 });
 
@@ -18,10 +18,12 @@ gulp.task('copy-bower-components', require('./gulp-tasks/copy-bower-components')
 gulp.task('copy-html-files', require('./gulp-tasks/copy-html-files')(gulp, plugins));
 gulp.task('connect', require('./gulp-tasks/connect')(gulp, plugins));
 gulp.task('connect-dist', require('./gulp-tasks/connect-dist')(gulp, plugins));
+gulp.task('test', require('./gulp-tasks/test')(gulp, plugins));
+gulp.task('tdd', require('./gulp-tasks/tdd')(gulp, plugins));
 
 // default task
 gulp.task('default',
-  ['lint', 'connect']
+  ['tdd']
 );
 
 // build task
