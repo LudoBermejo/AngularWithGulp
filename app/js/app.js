@@ -3,7 +3,7 @@
 'use strict';
 
 
-  angular.module('BoilerApp', ['ngRoute', 'ngAnimate'])
+  angular.module('boilerApp', ['ngRoute', 'testModule'])
 
   .config([
     '$locationProvider',
@@ -13,8 +13,8 @@
       // routes
       $routeProvider
         .when("/", {
-          templateUrl: "./templates/partial1.html",
-          controller: "MainController"
+          templateUrl: "./modules/test/views/template.html",
+          controller: "TestController"
         })
         .otherwise({
            redirectTo: '/'
@@ -22,14 +22,6 @@
     }
   ]);
 
-  //Load controller
-  angular.module('BoilerApp')
-
-  .controller('MainController', [
-    '$scope',
-    function($scope) {
-      $scope.test = "Testing...";
-    }
-  ]);
+  
 
 }());
